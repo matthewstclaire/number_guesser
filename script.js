@@ -9,9 +9,17 @@ document.querySelector(".check").addEventListener("click", function () {
   if (!guess) {
     document.querySelector(".message").textContent =
       "You have to actually choose a number...";
+    //winner
   } else if (guess === number) {
-    document.querySelector(".message").textContent =
-      "Wait...You actually won...";
+    document.querySelector(
+      ".message"
+    ).textContent = `You win! Your score is ${score}!`;
+    document.querySelector("body").style.backgroundColor = "#60b347";
+    document.querySelector(".number").style.width = "30rem";
+    //devil secret beginning
+  } else if (guess === 666) {
+    document.querySelector(".message").textContent = "Okay Damien try again!";
+    document.querySelector("body").style.backgroundColor = "#b30f04";
   } else if (guess > number) {
     if (score > 0) {
       document.querySelector(".message").textContent =
